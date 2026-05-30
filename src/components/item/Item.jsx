@@ -22,7 +22,7 @@ export function Item({ id, title, category, location, itemType, status, publicDe
       <div className="item-card-header">
         <h3 className="item-card-title">{title}</h3>
         <span className={`item-type-badge ${typeClass}`}>
-          {itemType === 'FOUND' ? '📍 Found' : '🔍 Lost'}
+          {itemType === 'FOUND' ? ' Found' : ' Lost'}
         </span>
       </div>
 
