@@ -1,0 +1,168 @@
+/* PostItem.css — Post Item Page */
+
+.postitem-page {
+  min-height: 100vh;
+  background: var(--bg-page);
+  background-image: var(--gradient-mesh);
+  background-attachment: fixed;
+}
+
+.postitem-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.postitem-card {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99,102,241,0.14);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 36px rgba(67,56,202,0.12);
+  animation: fadeInUp 0.5s ease;
+}
+
+.postitem-header {
+  margin-bottom: 2rem;
+}
+
+.postitem-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.postitem-subtitle {
+  font-size: 0.9rem;
+  color: #64748B;
+  font-weight: 400;
+}
+
+.postitem-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.postitem-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Item type toggle */
+.type-toggle-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.type-toggle-btn {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 2px solid rgba(99,102,241,0.16);
+  background: #F8FAFC;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #64748B;
+}
+
+.type-toggle-btn:hover { border-color: rgba(99,102,241,0.35); color: #4338CA; background: rgba(99,102,241,0.05); }
+
+.type-toggle-btn.active-lost {
+  background: rgba(99,102,241,0.1);
+  border-color: #4338CA;
+  color: #4338CA;
+  box-shadow: 0 4px 14px rgba(67,56,202,0.14);
+}
+.type-toggle-btn.active-found {
+  background: rgba(13,148,136,0.1);
+  border-color: #0D9488;
+  color: #0D9488;
+  box-shadow: 0 4px 14px rgba(13,148,136,0.14);
+}
+
+/* Submit button */
+.postitem-button {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(67,56,202,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.postitem-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(67,56,202,0.38);
+  filter: brightness(1.05);
+}
+.postitem-button:disabled { opacity: 0.7; cursor: not-allowed; }
+
+@media (max-width: 600px) {
+  .postitem-form { grid-template-columns: 1fr; }
+  .postitem-card { padding: 1.75rem 1.25rem; }
+  .type-toggle-group { flex-direction: column; }
+}
+
+/* ── Type badge (replaces the toggle when type comes from URL) ── */
+.postitem-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.badge-found {
+  background: rgba(13,148,136,0.12);
+  color: #0D9488;
+  border: 1.5px solid rgba(13,148,136,0.25);
+}
+
+.badge-lost {
+  background: rgba(245,158,11,0.12);
+  color: #B45309;
+  border: 1.5px solid rgba(245,158,11,0.3);
+}
+
+/* ── Submit button colour variants ── */
+.postitem-button.btn-found {
+  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+  box-shadow: 0 4px 18px rgba(13,148,136,0.28);
+}
+.postitem-button.btn-found:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(13,148,136,0.4);
+}
+
+.postitem-button.btn-lost {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  box-shadow: 0 4px 18px rgba(217,119,6,0.28);
+}
+.postitem-button.btn-lost:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(217,119,6,0.4);
+}
+

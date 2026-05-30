@@ -1,0 +1,165 @@
+/* Profile.css — Slide-in Profile Drawer */
+
+.profile-drawer-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+.profile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(99, 102, 241, 0.14);
+  box-shadow: 4px 0 40px rgba(67, 56, 202, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideInLeft 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Header */
+.profile-header {
+  background: linear-gradient(135deg, #4338CA 0%, #6366F1 60%, #0D9488 100%);
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.profile-header h2 {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.close-profile-btn {
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s ease;
+  line-height: 1;
+}
+.close-profile-btn:hover { background: rgba(255,255,255,0.28); }
+
+/* Avatar ring */
+.profile-avatar-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.profile-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4338CA, #0D9488);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 800;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 16px rgba(67,56,202,0.22);
+  margin-top: -36px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-username {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+.profile-email-tag { font-size: 0.8rem; color: #64748B; }
+
+/* Content */
+.profile-content { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 1rem;
+  background: #F8FAFC;
+  border: 1px solid rgba(99,102,241,0.1);
+  border-radius: 12px;
+}
+
+.field-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #94A3B8;
+}
+.field-value { font-size: 0.9rem; font-weight: 600; color: #1E293B; word-break: break-all; }
+
+.status-badge { display: inline-block; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+.status-badge.active   { background: rgba(13,148,136,0.12); color: #0D9488; border: 1px solid rgba(13,148,136,0.24); }
+.status-badge.inactive { background: rgba(100,116,139,0.12); color: #64748B; border: 1px solid rgba(100,116,139,0.24); }
+
+/* Nav buttons */
+.profile-nav-section {
+  padding: 1rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(99,102,241,0.1);
+  margin-top: auto;
+}
+
+.profile-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 13px;
+  border: none;
+  background: #F8FAFC;
+  color: #374151;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+.profile-nav-btn i {
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.profile-nav-btn:hover { transform: translateX(4px); }
+
+.profile-nav-btn.indigo { }
+.profile-nav-btn.indigo i { background: rgba(99,102,241,0.12); color: #4338CA; }
+.profile-nav-btn.indigo:hover { background: rgba(99,102,241,0.06); color: #4338CA; }
+
+.profile-nav-btn.teal i { background: rgba(13,148,136,0.12); color: #0D9488; }
+.profile-nav-btn.teal:hover { background: rgba(13,148,136,0.06); color: #0D9488; }
+
+.profile-nav-btn.amber i { background: rgba(245,158,11,0.12); color: #D97706; }
+.profile-nav-btn.amber:hover { background: rgba(245,158,11,0.06); color: #D97706; }
+
+@media (max-width: 400px) {
+  .profile-drawer { width: 100vw; }
+}

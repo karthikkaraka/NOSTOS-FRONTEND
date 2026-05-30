@@ -1,0 +1,172 @@
+/* registration.css — mirrors Login split-screen layout */
+
+/* Re-use Login layout classes — same structure, teal accent on left */
+.register-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #F8FAFC;
+}
+
+/* ── LEFT PANEL ── */
+.register-left {
+  background: linear-gradient(145deg, #0D9488 0%, #14B8A6 45%, #4338CA 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.register-left::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -100px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  filter: blur(30px);
+}
+.register-left::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: rgba(245,158,11,0.12);
+  filter: blur(40px);
+}
+
+.register-brand {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  animation: fadeInUp 0.7s ease;
+}
+
+.register-brand-logo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.75rem;
+}
+.register-brand-logo span { color: rgba(245,158,11,0.9); }
+
+.register-brand-tagline {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.register-steps {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.register-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255,255,255,0.88);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.register-step-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.85rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+/* ── RIGHT PANEL ── */
+.register-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  background: #F8FAFC;
+  overflow-y: auto;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 440px;
+  animation: fadeInUp 0.65s ease 0.1s both;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.register-subtitle {
+  font-size: 0.92rem;
+  color: #64748B;
+  margin-bottom: 2rem;
+}
+
+.auth-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid rgba(239,68,68,0.22);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.87rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.register-form { display: flex; flex-direction: column; gap: 1.1rem; }
+
+/* Reuse form tokens from Login.css */
+.register-button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(13,148,136,0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.register-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(13,148,136,0.40);
+  filter: brightness(1.05);
+}
+.register-button:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.register-link-text { text-align: center; font-size: 0.87rem; color: #64748B; margin-top: 0.5rem; }
+.register-link { color: #0D9488; font-weight: 700; text-decoration: none; }
+.register-link:hover { color: #0A7A70; text-decoration: underline; }
+
+@media (max-width: 800px) {
+  .register-container { grid-template-columns: 1fr; }
+  .register-left { display: none; }
+  .register-right { padding: 2rem 1.25rem; align-items: flex-start; padding-top: 3rem; }
+}
