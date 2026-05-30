@@ -71,7 +71,7 @@ export function PostItem() {
                 <div className="postitem-card">
                     <div className="postitem-header">
                         <div className={`postitem-type-badge ${urlType === 'LOST' ? 'badge-lost' : 'badge-found'}`}>
-                            {urlType === 'LOST' ? '🔍 Lost Item Search' : '📍 Post Found Item'}
+                            {urlType === 'LOST' ? ' Lost Item Search' : '📍 Post Found Item'}
                         </div>
                         <h1 className="postitem-title">
                             {urlType === 'LOST' ? 'Find Your Lost Item' : 'Report a Found Item'}
@@ -188,7 +188,7 @@ export function PostItem() {
                             {loading && <span className="btn-spinner"></span>}
                             {loading
                                 ? (urlType === 'LOST' ? 'Searching…' : 'Posting…')
-                                : (urlType === 'LOST' ? '🔍 Find Matches' : '📍 Submit Found Item')}
+                                : (urlType === 'LOST' ? ' Find Matches' : ' Submit Found Item')}
                         </button>
                     </form>
                 </div>
